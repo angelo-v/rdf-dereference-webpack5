@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {ProvidePlugin} = require('webpack');
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 const config = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
@@ -18,16 +18,9 @@ const config = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '*'],
-    fallback: {
-      "stream": require.resolve("stream-browserify"),
-      "buffer": require.resolve("buffer/"),
-      "process": require.resolve("process/browser")
-    }
   },
   plugins: [
-    new ProvidePlugin({
-      process: 'process',
-    }),
+    new NodePolyfillPlugin(),
     new HtmlWebpackPlugin({
       title: 'rdf-dereference-webpack5',
       meta: {

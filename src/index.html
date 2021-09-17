@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Test Page</title>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "name": "Minecraft"
+        }
+    </script>
+</head>
+<body vocab="https://schema.org/">
+<h1>This is a test page for development</h1>
+
+<div>
+    The page contains both JSON-lD and RDFa. Both should be found by rdf-dereference.js
+</div>
+
+<div>
+    <h2>RDFa data</h2>
+    <span property="name">MONOPOLY</span>
+</div>
+
+<div>
+    <h2>Dereferenced data from this document (should contain Minecraft and MONOPOLY):</h2>
+
+    <pre><code id="result"></code></pre>
+</div>
+</body>
+</html>
